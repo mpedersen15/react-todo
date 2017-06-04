@@ -27,7 +27,7 @@ describe('TodoList', () => {
       {
         id: 2,
         text: 'Test todo 2',
-        completed: true,
+        completed: false,
         completedAt: 2020,
         createdAt: 1515
       }
@@ -43,7 +43,7 @@ describe('TodoList', () => {
     );
     var todoList = TestUtils.scryRenderedComponentsWithType(provider, ConnectedTodoList)[0];
     var todoComponents = TestUtils.scryRenderedComponentsWithType(todoList, ConnectedTodo);
-
+    console.log('todoComponents', todoComponents);
     expect(todoComponents.length).toBe(2);
   });
 

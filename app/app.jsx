@@ -13,7 +13,7 @@ store.subscribe(() => {
 });
 
 store.dispatch(actions.addTodo('My new todo!'))
-store.dispatch(actions.setSearchText('new'));
+store.dispatch(actions.setSearchText('dogs'));
 store.dispatch(actions.toggleShowCompleted());
 
 // Load foundation
