@@ -31,7 +31,8 @@ module.exports = {
 
     // filter by searchText
     filteredTodos = filteredTodos.filter((todo) => {
-        return searchText.length === 0 || todo.text.toLowerCase().indexOf(searchText) > -1; 
+        var text = todo.text.toLowerCase();
+        return searchText.length === 0 || text.indexOf(searchText) > -1; 
     });
 
     // sort todos with non-completed items first

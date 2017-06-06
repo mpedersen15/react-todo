@@ -39,7 +39,12 @@
     "node-sass": "^4.5.2",
     "node-uuid": "^1.4.8",
     "react-addons-test-utils": "^0.14.7",
+<<<<<<< HEAD
     "redux-thunk": "^2.1.0",
+=======
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
+>>>>>>> 294e631f830ca510cc71eafe029c64702d64080a
     "sass-loader": "^4.1.1",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",
