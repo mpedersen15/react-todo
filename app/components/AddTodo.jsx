@@ -11,7 +11,7 @@ export var AddTodo = React.createClass({
     if (newTodo.length > 0){
       // console.log('need to call this.props.onAddTodo(newTodo) with new todo', newTodo);
       this.refs.newTodo.value = "";
-      dispatch(actions.addTodo(newTodo));
+      dispatch(actions.startAddTodo(newTodo));
     }else{
       this.refs.newTodo.focus();
     }
