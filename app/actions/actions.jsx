@@ -80,14 +80,19 @@ export var addTodos = (todos) => {
 export var startAddTodos = () => {
   return (dispatch, getState) => {
     return firebaseRef.child('todos').once('value').then((snapshot) => {
-      var todosObject = snapshot.val();
+      var todosObject = snapshot.val() || {};
       var keys = Object.keys(todosObject);
-      var todosArray = keys.map((key) => {
-        return {
-          ...todosObject[key],
-          id: key
-        }
-      });
+      if (keys.length > 0){
+        var todosArray = keys.map((key) => {
+          return {
+            ...todosObject[key],
+            id: key
+          }
+        });
+      }else{
+        var todosArray = [];
+      }
+
       dispatch(addTodos(todosArray));
     });
   }
