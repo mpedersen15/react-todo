@@ -1,3 +1,5 @@
+console.log(process.env.NODE_ENV);
+
 var expect = require('expect');
 
 describe('App', () => {

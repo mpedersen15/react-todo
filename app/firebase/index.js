@@ -1,14 +1,17 @@
 import firebase from 'firebase';
 
+console.log('process.env.API_KEY', process.env.API_KEY, process.env.NODE_ENV );
+
 try {
   var config = {
-    apiKey: "AIzaSyAjNQvpJRss4BZ81T_a9okiowZUZfxypOM",
-    authDomain: "mjp-todo.firebaseapp.com",
-    databaseURL: "https://mjp-todo.firebaseio.com",
-    projectId: "mjp-todo",
-    storageBucket: "mjp-todo.appspot.com",
-    messagingSenderId: "674411854674"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID
   };
+
 
   firebase.initializeApp(config);
 } catch(err) {
