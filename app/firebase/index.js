@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 
-console.log('process.env.API_KEY', process.env.API_KEY, process.env.NODE_ENV );
+// console.log('process.env.API_KEY', process.env.API_KEY, process.env.NODE_ENV );
 
 try {
   var config = {
@@ -17,6 +17,8 @@ try {
 } catch(err) {
   console.log('error in firebase setup', err)
 }
+
+export var githubProvider = new firebase.auth.GithubAuthProvider();
 
 export var firebaseRef = firebase.database().ref();
 
