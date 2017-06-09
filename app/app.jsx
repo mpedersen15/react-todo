@@ -12,6 +12,7 @@ firebase.auth().onAuthStateChanged((user) => {
 	if (user) {
 		console.log('redirect to /todos');
 		store.dispatch(actions.login(user.uid));
+		store.dispatch(actions.startAddTodos());
 		hashHistory.push('/todos');
 	}else {
 		console.log('redirect to /');
@@ -20,7 +21,6 @@ firebase.auth().onAuthStateChanged((user) => {
 	}
 });
 
-store.dispatch(actions.startAddTodos());
 
 // Load foundation
 $(document).foundation();
