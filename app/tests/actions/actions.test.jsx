@@ -105,6 +105,28 @@ describe('actions', () => {
     expect(response).toEqual(action);
   });
 
+  it('should generate login action', () => {
+    var action = {
+      type: 'LOGIN',
+      uid: 1515,
+    };
+
+    var response = actions.login(action.uid);
+
+    expect(response).toEqual(action);
+  });
+
+  it('should generate logout action', () => {
+    var action = {
+      type: 'LOGOUT',
+    };
+
+    var response = actions.logout();
+
+    expect(response).toEqual(action);
+  });
+
+  /*--- FIREBASE TESTS ---*/
   describe('tests with firebase todos', () => {
     var testTodoRef;
     var testTodoText = 'Somthing to do';

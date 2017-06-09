@@ -107,4 +107,30 @@ describe('reducers', () => {
     });
   });
 
+  describe('authReducer', () => {
+    it('should store uid on login', () => {
+      var action = {
+        type: 'LOGIN',
+        uid: 1515
+      };
+
+      var res = reducers.authReducer(df({}), df(action));
+      expect(res).toEqual({
+        uid: action.uid
+      });
+    });
+
+    it('should remove uid on logout', () => {
+      var authData = {
+        uid: 1515
+      };
+      var action = {
+        type: 'LOGOUT',
+      };
+
+      var res = reducers.authReducer(df(authData), df(action));
+      expect(res).toEqual({});
+    });
+  });
+
 });
