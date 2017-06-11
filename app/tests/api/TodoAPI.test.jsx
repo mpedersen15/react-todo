@@ -53,6 +53,12 @@ describe('TodoAPI', () => {
       expect(filteredTodos.length).toBe(1);
     });
 
+    it('should filter todos when search text is valid and uppercase', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, true, 'Second');
+
+      expect(filteredTodos.length).toBe(1);
+    });
+
     it('should return all todos when search text is empty', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, true, '');
 
